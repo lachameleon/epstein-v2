@@ -1,0 +1,8 @@
+.env
+__pycache__
+venv
+discord_bot.env
+train.log
+train2.log
+training_output.log
+training.log
