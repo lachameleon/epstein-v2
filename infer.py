@@ -16,8 +16,9 @@ BANNER = """
 Jefrrey Inference
 """
 
-LORA_SCALING = 0.5  # 0.0 = no LORA impact, 1.0 = full impact
-REPETITION_PENALTY = 1.2
+LORA_SCALING = 0.3  # 0.0 = no LORA impact, 1.0 = full impact
+REPETITION_PENALTY = 1.5
+NO_REPEAT_NGRAM_SIZE = 3
 
 def find_all_checkpoints():
     adapter_dir = os.path.join(BASE_DIR, "epstein_lora_teapotai_tinyteapot")
@@ -133,6 +134,7 @@ def chat():
                     temperature=0.7,
                     top_p=0.9,
                     repetition_penalty=REPETITION_PENALTY,
+                    no_repeat_ngram_size=NO_REPEAT_NGRAM_SIZE,
                     do_sample=True,
                     pad_token_id=tokenizer.pad_token_id,
                     eos_token_id=tokenizer.eos_token_id,
