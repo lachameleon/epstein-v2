@@ -16,7 +16,7 @@ BANNER = """
 Jefrrey Inference
 """
 
-LORA_SCALING = 0.3  # 0.0 = no LORA impact, 1.0 = full impact
+LORA_SCALING = 0.05  # 0.0 = no LORA impact, 1.0 = full impact
 REPETITION_PENALTY = 1.5
 NO_REPEAT_NGRAM_SIZE = 3
 
