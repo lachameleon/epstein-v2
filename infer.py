@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+import os
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from peft import PeftModel
 
 MODEL = "teapotai/tinyteapot"
-ADAPTER = "./epstein_lora_teapotai_tinyteapot"
+ADAPTER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "epstein_lora_teapotai_tinyteapot")
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL, trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token
