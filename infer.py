@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
+import subprocess
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from peft import PeftModel, PeftConfig
@@ -9,17 +10,15 @@ from peft.tuners.lora import LoraConfig
 MODEL = "teapotai/tinyteapot"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ADAPTER = os.path.join(BASE_DIR, "epstein_lora_teapotai_tinyteapot")
-
+subprocess.run("clear",text=True,shell=True)
 BANNER = """
-╔═══════════════════════════════════════════════════╗
-║         🤖 Epstein Files Inference Bot            ║
-╚═══════════════════════════════════════════════════╝
+Jefrrey Inference
 """
 
-def find_latest_checkpoint():
+def find_all_checkpoints():
     adapter_dir = os.path.join(BASE_DIR, "epstein_lora_teapotai_tinyteapot")
     if not os.path.isdir(adapter_dir):
-        return None
+        return []
     
     checkpoints = []
     for item in os.listdir(adapter_dir):
@@ -28,10 +27,8 @@ def find_latest_checkpoint():
             if step.isdigit():
                 checkpoints.append((int(step), os.path.join(adapter_dir, item)))
     
-    if checkpoints:
-        checkpoints.sort(reverse=True)
-        return checkpoints[0][1]
-    return None
+    checkpoints.sort(reverse=True)
+    return checkpoints
 
 def is_valid_adapter(path):
     return os.path.isfile(os.path.join(path, "adapter_config.json"))
@@ -50,18 +47,43 @@ def load_model():
         trust_remote_code=True
     )
     
-    checkpoint_path = find_latest_checkpoint()
+    checkpoints = find_all_checkpoints()
     
-    if is_valid_adapter(ADAPTER):
-        print(f"Loading adapter: {ADAPTER}...")
+    print("\n╔═══════════════════════════════════════════════════╗")
+    print("║              Available Checkpoints                 ║")
+    print("╚═══════════════════════════════════════════════════╝")
+    
+    print("  [0] Base model only (no LoRA)")
+    for i, (step, path) in enumerate(checkpoints, 1):
+        print(f"  [{i}] Checkpoint {step}")
+    
+    while True:
+        try:
+            choice = input("\nSelect checkpoint [0]: ").strip()
+            if choice == "":
+                checkpoint_path, selected_step = None, None
+                break
+            idx = int(choice)
+            if idx == 0:
+                checkpoint_path, selected_step = None, None
+                break
+            if 1 <= idx <= len(checkpoints):
+                selected_step, checkpoint_path = checkpoints[idx - 1]
+                break
+            print(f"Invalid selection. Choose 0-{len(checkpoints)}")
+        except ValueError:
+            print("Please enter a number")
+    
+    if selected_step:
+        print(f"\nLoading checkpoint-{selected_step}...")
+        model = PeftModel.from_pretrained(base, checkpoint_path)
+        print(f"✓ Loaded from checkpoint-{selected_step}")
+    elif is_valid_adapter(ADAPTER):
+        print(f"\nLoading adapter: {ADAPTER}...")
         model = PeftModel.from_pretrained(base, ADAPTER)
         print("✓ Loaded with LoRA adapter")
-    elif checkpoint_path and is_valid_adapter(checkpoint_path):
-        print(f"Loading checkpoint: {checkpoint_path}...")
-        model = PeftModel.from_pretrained(base, checkpoint_path)
-        print("✓ Loaded from checkpoint")
     else:
-        print(f"⚠ No adapter or checkpoint found")
+        print(f"\n⚠ No adapter or checkpoint found")
         print("  Using base model only (no fine-tuning)")
         model = base
     
