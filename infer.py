@@ -5,7 +5,7 @@ import subprocess
 import argparse
 import warnings
 import torch
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, TextIteratorStreamer
+from transformers import AutoModelForCausalLM, AutoTokenizer, TextIteratorStreamer
 from peft import PeftModel, PeftConfig
 from peft.tuners.lora import LoraConfig
 from threading import Thread
@@ -132,7 +132,7 @@ def load_model(base_model, adapter_path, lora_scale):
     tokenizer.pad_token = tokenizer.eos_token
     
     print(f"{DIM}Loading base model: {base_model}...{RESET}")
-    base = AutoModelForSeq2SeqLM.from_pretrained(
+    base = AutoModelForCausalLM.from_pretrained(
         base_model,
         device_map="cpu",
         torch_dtype=torch.float32,
