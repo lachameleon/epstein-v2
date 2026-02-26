@@ -2,22 +2,64 @@
 import os
 import sys
 import subprocess
+import argparse
+import warnings
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, TextIteratorStreamer
 from peft import PeftModel, PeftConfig
 from peft.tuners.lora import LoraConfig
 from threading import Thread
 
+warnings.filterwarnings("ignore")
+
+RED = "\033[91m"
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+BLUE = "\033[94m"
+MAGENTA = "\033[95m"
+CYAN = "\033[96m"
+BOLD = "\033[1m"
+DIM = "\033[2m"
+RESET = "\033[0m"
+
+parser = argparse.ArgumentParser(description="Epstein Inference")
+parser.add_argument("--lora-scale", type=float, default=None, help="LoRA scaling factor (0.0-1.0)")
+parser.add_argument("--repetition-penalty", type=float, default=1.5, help="Repetition penalty")
+args, _ = parser.parse_known_args()
+
+if args.lora_scale is None:
+    while True:
+        try:
+            lora_input = input(f"\n{BOLD}LoRA Scaling (0.0-1.0){RESET} [0.3]: ").strip()
+            if lora_input == "":
+                args.lora_scale = 0.3
+                break
+            val = float(lora_input)
+            if 0.0 <= val <= 1.0:
+                args.lora_scale = val
+                break
+            print(f"{RED}Please enter a value between 0.0 and 1.0{RESET}")
+        except ValueError:
+            print(f"{RED}Please enter a valid number{RESET}")
+
 MODEL = "teapotai/tinyteapot"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ADAPTER = os.path.join(BASE_DIR, "epstein_lora_teapotai_tinyteapot")
 subprocess.run("clear",text=True,shell=True)
-BANNER = """
-Jefrrey Inference
+BANNER = f"""
+{BOLD}{MAGENTA}╔═══════════════════════════════════════════════════════════╗
+║  ██████╗ ███████╗███████╗██╗     ██╗███╗   ██╗███████╗               ║
+║  ██╔══██╗██╔════╝██╔════╝██║     ██║████╗  ██║██╔════╝               ║
+║  ██║  ██║█████╗  █████╗  ██║     ██║██╔██╗ ██║█████╗                 ║
+║  ██║  ██║██╔══╝  ██╔══╝  ██║     ██║██║╚██╗██║██╔══╝                 ║
+║  ██████╔╝███████╗███████╗███████╗██║██║ ╚████║███████╗               ║
+║  ╚═════╝ ╚══════╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝               ║
+║          {CYAN}Inference Engine v2.0{RESET}                              {MAGENTA}║
+╚═══════════════════════════════════════════════════════════╝{RESET}
 """
 
-LORA_SCALING = 0.05  # 0.0 = no LORA impact, 1.0 = full impact
-REPETITION_PENALTY = 1.5
+LORA_SCALING: float = args.lora_scale
+REPETITION_PENALTY = args.repetition_penalty
 NO_REPEAT_NGRAM_SIZE = 3
 
 def find_all_checkpoints():
@@ -40,7 +82,7 @@ def is_valid_adapter(path):
 
 def load_model():
     print(f"{BANNER}")
-    print(f"Loading base model: {MODEL}...")
+    print(f"{DIM}Loading base model: {MODEL}...{RESET}")
     
     tokenizer = AutoTokenizer.from_pretrained(MODEL, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
@@ -54,17 +96,19 @@ def load_model():
     
     checkpoints = find_all_checkpoints()
     
-    print("\n╔═══════════════════════════════════════════════════╗")
+    print(f"\n{BOLD}{CYAN}╔═══════════════════════════════════════════════════════════╗")
     print("║              Available Checkpoints                 ║")
-    print("╚═══════════════════════════════════════════════════╝")
+    print("╚═══════════════════════════════════════════════════════════╝{RESET}")
     
-    print("  [0] Base model only (no LoRA)")
+    print(f"  {GREEN}[0]{RESET}  Base model only (no LoRA)")
     for i, (step, path) in enumerate(checkpoints, 1):
-        print(f"  [{i}] Checkpoint {step}")
+        print(f"  {GREEN}[{i}]{RESET}  Checkpoint {step}")
+    
+    print(f"\n  {YELLOW}LoRA Scaling:{RESET} {LORA_SCALING}  {YELLOW}Rep Penalty:{RESET} {REPETITION_PENALTY}")
     
     while True:
         try:
-            choice = input("\nSelect checkpoint [0]: ").strip()
+            choice = input(f"\n{BOLD}Select checkpoint{RESET} [0]: ").strip()
             if choice == "":
                 checkpoint_path, selected_step = None, None
                 break
@@ -75,27 +119,27 @@ def load_model():
             if 1 <= idx <= len(checkpoints):
                 selected_step, checkpoint_path = checkpoints[idx - 1]
                 break
-            print(f"Invalid selection. Choose 0-{len(checkpoints)}")
+            print(f"{RED}Invalid selection. Choose 0-{len(checkpoints)}{RESET}")
         except ValueError:
-            print("Please enter a number")
+            print(f"{RED}Please enter a number{RESET}")
     
     if selected_step:
-        print(f"\nLoading checkpoint-{selected_step}...")
+        print(f"\n{GREEN}Loading checkpoint-{selected_step}...{RESET}")
         model = PeftModel.from_pretrained(base, checkpoint_path, scaling_factor=LORA_SCALING)
-        print(f"✓ Loaded from checkpoint-{selected_step} (scaling={LORA_SCALING})")
+        print(f"{GREEN}✓{RESET} Loaded from checkpoint-{selected_step} (scaling={LORA_SCALING})")
     elif is_valid_adapter(ADAPTER):
-        print(f"\nLoading adapter: {ADAPTER}...")
+        print(f"\n{GREEN}Loading adapter: {ADAPTER}...{RESET}")
         model = PeftModel.from_pretrained(base, ADAPTER, scaling_factor=LORA_SCALING)
-        print(f"✓ Loaded with LoRA adapter (scaling={LORA_SCALING})")
+        print(f"{GREEN}✓{RESET} Loaded with LoRA adapter (scaling={LORA_SCALING})")
     else:
-        print(f"\n⚠ No adapter or checkpoint found")
-        print("  Using base model only (no fine-tuning)")
+        print(f"\n{YELLOW}⚠ No adapter or checkpoint found{RESET}")
+        print(f"  {DIM}Using base model only (no fine-tuning){RESET}")
         model = base
     
     model.eval()
-    print("\n" + "─" * 50)
-    print("Ready! Type your questions below.")
-    print("Type 'quit' or 'exit' to stop.\n")
+    print(f"\n{BOLD}{MAGENTA}{'─' * 56}{RESET}")
+    print(f"{BOLD}{GREEN}Ready!{RESET} Type your questions below.")
+    print(f"{DIM}Type 'quit' or 'exit' to stop.{RESET}\n")
     
     return model, tokenizer
 
@@ -105,9 +149,9 @@ def chat():
     
     while True:
         try:
-            q = input("\n\033[1mYou:\033[0m ").strip()
+            q = input(f"\n{BOLD}{CYAN}You:{RESET} ").strip()
             if q.lower() in ("quit", "exit", "q"):
-                print("\nGoodbye!")
+                print(f"{YELLOW}Goodbye!{RESET}")
                 break
             if not q:
                 continue
@@ -121,8 +165,8 @@ def chat():
 
 ### Answer:"""
             
-            print("\n\033[90mThinking...\033[0m")
-            print("\n\033[1;36mAssistant:\033[0m ", end="", flush=True)
+            print(f"\n{DIM}Thinking...{RESET}")
+            print(f"\n{BOLD}{MAGENTA}Assistant:{RESET} ", end="", flush=True)
             
             inputs = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True, max_length=2048)
             streamer = TextIteratorStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
@@ -152,10 +196,10 @@ def chat():
             print("\n")
             
         except KeyboardInterrupt:
-            print("\n\nGoodbye!")
+            print(f"\n\n{YELLOW}Goodbye!{RESET}")
             break
         except Exception as e:
-            print(f"\n\033[91mError:\033[0m {e}")
+            print(f"\n{RED}Error: {e}{RESET}")
 
 
 if __name__ == "__main__":
