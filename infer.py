@@ -33,6 +33,9 @@ def find_latest_checkpoint():
         return checkpoints[0][1]
     return None
 
+def is_valid_adapter(path):
+    return os.path.isfile(os.path.join(path, "adapter_config.json"))
+
 def load_model():
     print(f"{BANNER}")
     print(f"Loading base model: {MODEL}...")
@@ -49,11 +52,11 @@ def load_model():
     
     checkpoint_path = find_latest_checkpoint()
     
-    if os.path.isdir(ADAPTER):
+    if is_valid_adapter(ADAPTER):
         print(f"Loading adapter: {ADAPTER}...")
         model = PeftModel.from_pretrained(base, ADAPTER)
         print("✓ Loaded with LoRA adapter")
-    elif checkpoint_path:
+    elif checkpoint_path and is_valid_adapter(checkpoint_path):
         print(f"Loading checkpoint: {checkpoint_path}...")
         model = PeftModel.from_pretrained(base, checkpoint_path)
         print("✓ Loaded from checkpoint")
