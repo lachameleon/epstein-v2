@@ -3,9 +3,10 @@ import os
 import sys
 import subprocess
 import torch
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, TextIteratorStreamer
 from peft import PeftModel, PeftConfig
 from peft.tuners.lora import LoraConfig
+from threading import Thread
 
 MODEL = "teapotai/tinyteapot"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -14,6 +15,9 @@ subprocess.run("clear",text=True,shell=True)
 BANNER = """
 Jefrrey Inference
 """
+
+LORA_SCALING = 0.5  # 0.0 = no LORA impact, 1.0 = full impact
+REPETITION_PENALTY = 1.2
 
 def find_all_checkpoints():
     adapter_dir = os.path.join(BASE_DIR, "epstein_lora_teapotai_tinyteapot")
@@ -76,12 +80,12 @@ def load_model():
     
     if selected_step:
         print(f"\nLoading checkpoint-{selected_step}...")
-        model = PeftModel.from_pretrained(base, checkpoint_path)
-        print(f"✓ Loaded from checkpoint-{selected_step}")
+        model = PeftModel.from_pretrained(base, checkpoint_path, scaling_factor=LORA_SCALING)
+        print(f"✓ Loaded from checkpoint-{selected_step} (scaling={LORA_SCALING})")
     elif is_valid_adapter(ADAPTER):
         print(f"\nLoading adapter: {ADAPTER}...")
-        model = PeftModel.from_pretrained(base, ADAPTER)
-        print("✓ Loaded with LoRA adapter")
+        model = PeftModel.from_pretrained(base, ADAPTER, scaling_factor=LORA_SCALING)
+        print(f"✓ Loaded with LoRA adapter (scaling={LORA_SCALING})")
     else:
         print(f"\n⚠ No adapter or checkpoint found")
         print("  Using base model only (no fine-tuning)")
@@ -116,24 +120,34 @@ def chat():
 
 ### Answer:"""
             
-            print("\n\033[90mThinking...\033[0m", end="\r")
+            print("\n\033[90mThinking...\033[0m")
+            print("\n\033[1;36mAssistant:\033[0m ", end="", flush=True)
+            
+            inputs = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True, max_length=2048)
+            streamer = TextIteratorStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
             
             with torch.no_grad():
-                out = model.generate(
-                    **tokenizer(prompt, return_tensors="pt", padding=True, truncation=True, max_length=2048),
+                gen_kwargs = dict(
+                    **inputs,
                     max_new_tokens=512,
                     temperature=0.7,
                     top_p=0.9,
+                    repetition_penalty=REPETITION_PENALTY,
                     do_sample=True,
                     pad_token_id=tokenizer.pad_token_id,
-                    eos_token_id=tokenizer.eos_token_id
+                    eos_token_id=tokenizer.eos_token_id,
+                    streamer=streamer
                 )
+                thread = Thread(target=model.generate, kwargs=gen_kwargs)
+                thread.start()
+                
+                generated_text = ""
+                for text in streamer:
+                    print(text, end="", flush=True)
+                    generated_text += text
+                thread.join()
             
-            ans = tokenizer.decode(out[0], skip_special_tokens=True)
-            if prompt in ans:
-                ans = ans[len(prompt):].strip()
-            
-            print(f"\n\033[1;36mAssistant:\033[0m {ans}\n")
+            print("\n")
             
         except KeyboardInterrupt:
             print("\n\nGoodbye!")
