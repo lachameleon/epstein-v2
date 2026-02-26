@@ -4,5 +4,6 @@ peft
 trl
 bitsandbytes
 datasets
+discord.py
 gradio
 accelerate

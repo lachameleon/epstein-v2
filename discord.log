@@ -1,0 +1,7 @@
+WARNING:discord.client:PyNaCl is not installed, voice will NOT be supported
+[2026-02-26 17:34:36] [INFO    ] discord.client: logging in using static token
+INFO:discord.client:logging in using static token
+[2026-02-26 17:34:37] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 30de5cf21e3ccfc21db037ae6b8a1eed).
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 30de5cf21e3ccfc21db037ae6b8a1eed).
+INFO:__main__:Logged in as Epstein#2646
+INFO:__main__:Monitoring output.log in channel 1475434469178736651
