@@ -5,3 +5,166 @@ INFO:discord.client:logging in using static token
 INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 30de5cf21e3ccfc21db037ae6b8a1eed).
 INFO:__main__:Logged in as Epstein#2646
 INFO:__main__:Monitoring output.log in channel 1475434469178736651
+[2026-02-26 18:21:30] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-26 19:59:31] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-26 21:58:19] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 00:47:47] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 03:02:33] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 03:30:04] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 05:28:43] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 05:59:43] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 08:06:27] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+ERROR:__main__:Error updating embed: 503 Service Unavailable (error code: 0): upstream connect error or disconnect/reset before headers. reset reason: remote connection failure, transport failure reason: immediate connect error: No such file or directory
+[2026-02-27 08:48:28] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 11:14:22] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 13:02:01] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 14:03:23] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 14:20:46] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 15:37:09] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 16:08:46] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 17:30:41] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 18:08:06] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 19:38:40] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-27 22:17:34] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 00:33:02] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 02:12:56] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+ERROR:__main__:Error updating embed: 503 Service Unavailable (error code: 0): upstream connect error or disconnect/reset before headers. reset reason: connection termination
+[2026-02-28 04:31:05] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+ERROR:__main__:Error updating embed: 503 Service Unavailable (error code: 0): upstream connect error or disconnect/reset before headers. reset reason: connection termination
+[2026-02-28 07:32:09] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 08:04:44] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 12:02:32] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 13:02:39] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 16:08:16] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 18:33:13] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 18:49:31] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 22:13:19] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-02-28 23:52:52] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 00:05:11] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 03:41:31] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 04:30:18] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 04:56:17] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 05:51:53] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 08:28:47] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 11:35:49] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 14:59:35] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 16:17:29] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 19:45:41] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 20:17:39] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 21:01:01] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-01 23:47:22] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 03:08:58] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 03:53:38] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 05:12:10] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 08:37:43] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 11:29:05] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 11:32:25] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 12:23:59] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 14:26:46] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 14:51:58] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 17:07:26] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 19:05:01] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 19:21:54] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 21:08:42] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-02 23:49:30] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 01:00:28] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 02:23:20] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 04:55:35] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 05:30:40] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 05:57:04] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 09:19:07] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 10:26:04] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 11:52:33] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 13:39:23] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 16:36:30] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 17:36:54] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-03 21:34:56] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-04 01:34:24] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-04 04:00:10] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-04 07:01:42] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-04 08:26:04] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-04 09:07:46] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-04 09:44:50] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-04 12:08:27] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-04 16:05:42] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+[2026-03-04 18:58:18] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 30de5cf21e3ccfc21db037ae6b8a1eed.

@@ -1,10 +1,12 @@
 ---
 base_model: teapotai/tinyteapot
-library_name: transformers
+library_name: peft
 model_name: epstein_lora_teapotai_tinyteapot
 tags:
-- generated_from_trainer
+- base_model:adapter:teapotai/tinyteapot
+- lora
 - sft
+- transformers
 - trl
 licence: license
 ---
@@ -34,6 +36,7 @@ This model was trained with SFT.
 
 ### Framework versions
 
+- PEFT 0.18.1
 - TRL: 0.28.0
 - Transformers: 5.2.0
 - Pytorch: 2.10.0
